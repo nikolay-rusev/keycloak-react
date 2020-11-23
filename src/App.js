@@ -11,10 +11,10 @@ class App extends Component {
         <BrowserRouter>
           <div className="container">
             <ul>
-              <li><Link to="/">public component</Link></li>
+              <li><Link to="/welcome">public component</Link></li>
               <li><Link to="/secured">secured component</Link></li>
             </ul>
-            <Route exact path="/" component={Welcome} />
+            <Route exact path="/welcome" component={Welcome} />
             <Route path="/secured" component={Secured} />
           </div>
         </BrowserRouter>
