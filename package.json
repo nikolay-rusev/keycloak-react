@@ -11,9 +11,13 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4",
     "react-router-dom": "^5.2.0",
-    "keycloak-js": "^11.0.3"
+    "keycloak-js": "^11.0.3",
+    "express": "latest",
+    "express-session": "latest",
+    "keycloak-connect": "latest"
   },
   "scripts": {
+    "server": "nodemon server/index.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

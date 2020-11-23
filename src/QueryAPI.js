@@ -26,7 +26,7 @@ class QueryAPI extends Component {
   }
 
   handleClick = () => {
-    fetch('http://localhost:9000/users', this.authorizationHeader())
+    fetch('http://localhost:9100/users', this.authorizationHeader())
       .then(response => {
         if (response.status === 200)
           return response.json();
