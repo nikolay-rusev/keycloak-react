@@ -1,10 +1,10 @@
 {
-  "realm": "REGEnLIFE",
-  "auth-server-url": "http://localhost:8180/auth/",
-  "ssl-required": "external",
-  "resource": "center1",
-  "credentials": {
-    "secret": "ba2af313-dc4f-45f4-9af1-e35a175743d2"
-  },
-  "confidential-port": 0
+    "realm": "REGEnLIFE",
+    "auth-server-url": "http://localhost:8180/auth/",
+    "ssl-required": "external",
+    "resource": "center1",
+    "credentials": {
+        "secret": "ba2af313-dc4f-45f4-9af1-e35a175743d2"
+    },
+    "confidential-port": 0
 }
