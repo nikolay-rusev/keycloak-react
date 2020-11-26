@@ -1,5 +1,5 @@
 const express = require("express");
-const app = express();
+const server = express();
 const cors = require("cors");
 const session = require("express-session");
 const Keycloak = require("keycloak-connect");
@@ -8,7 +8,7 @@ let keycloak = new Keycloak({ store: memoryStore });
 
 // Attach middleware
 // session
-app.use(
+server.use(
     session({
         secret: "mySecret",
         resave: false,
@@ -18,8 +18,8 @@ app.use(
 );
 
 // cors
-app.use(cors());
-app.use(function (req, res, next) {
+server.use(cors());
+server.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
@@ -28,15 +28,15 @@ app.use(function (req, res, next) {
 });
 
 // keycloak
-app.use(keycloak.middleware());
+server.use(keycloak.middleware());
 
 // Attach route handler for home page
-app.get("/anonymous", (req, res, next) => {
+server.get("/anonymous", (req, res, next) => {
     console.log("/anonymous");
     res.json({ user: "Anonymous" });
 });
 
-app.get("/users", keycloak.protect(), function (req, res) {
+server.get("/users", keycloak.protect(), function (req, res) {
     console.log("/users");
     res.send({
         user: "common_user"
@@ -44,6 +44,6 @@ app.get("/users", keycloak.protect(), function (req, res) {
 });
 
 // Start server
-app.listen(9000, () => {
+server.listen(9000, () => {
     console.log("Server listening on port 9000!");
 });
