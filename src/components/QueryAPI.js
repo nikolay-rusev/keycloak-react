@@ -14,7 +14,14 @@ class QueryAPI extends Component {
     }
 
     authorizationHeader() {
-        if (!this.props.keycloak) return {};
+        if (!this.props.keycloak)
+            return {};
+            // return {
+            //     mode: "no-cors",
+            //     headers: {
+            //         "Access-Control-Allow-Origin": "*"
+            //     }
+            // };
         return {
             headers: {
                 Authorization: "Bearer " + this.props.keycloak.token
@@ -23,7 +30,7 @@ class QueryAPI extends Component {
     }
 
     handleClick = () => {
-        fetch("http://localhost:9000/user", this.authorizationHeader())
+        fetch("http://localhost:9000/users", this.authorizationHeader())
             .then((response) => {
                 if (response.status === 200) return response.json();
                 else return { status: response.status, message: response.statusText };
