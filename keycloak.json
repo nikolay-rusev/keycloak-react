@@ -3,8 +3,11 @@
     "auth-server-url": "http://localhost:8180/auth/",
     "ssl-required": "external",
     "resource": "center1",
+    "verify-token-audience": true,
+    "enable-cors": true,
     "credentials": {
         "secret": "ba2af313-dc4f-45f4-9af1-e35a175743d2"
     },
+    "use-resource-role-mappings": true,
     "confidential-port": 0
 }
