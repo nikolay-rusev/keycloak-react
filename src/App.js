@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom';
-import Welcome from './Welcome';
-import Secured from './Secured';
-import './App.css';
+import Welcome from './components/Welcome';
+import Secured from './components/Secured';
+import './css/App.css';
 
 
 class App extends Component {

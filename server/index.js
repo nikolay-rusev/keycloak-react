@@ -21,6 +21,7 @@ app.use(
 app.use(cors());
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
@@ -35,8 +36,8 @@ app.get("/anonymous", (req, res, next) => {
     res.json({ user: "Anonymous" });
 });
 
-app.get("/user", keycloak.protect(), function (req, res) {
-    console.log("/user");
+app.get("/users", keycloak.protect(), function (req, res) {
+    console.log("/users");
     res.send({
         user: "common_user"
     });
