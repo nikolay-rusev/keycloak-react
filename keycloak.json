@@ -9,5 +9,6 @@
         "secret": "ba2af313-dc4f-45f4-9af1-e35a175743d2"
     },
     "use-resource-role-mappings": true,
-    "confidential-port": 0
+    "confidential-port": 0,
+    "clientId": "center1"
 }
